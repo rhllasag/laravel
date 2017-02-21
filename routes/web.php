@@ -14,3 +14,14 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
+// RUTAS PARA RESTABLECER CONTRASEÑA
+Route::get('password/email', 'Auth\ForgotPasswordController@getEmail');
+Route::post('password/email', 'Auth\ForgotPasswordController@postEmail');
